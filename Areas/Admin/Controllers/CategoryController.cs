@@ -8,11 +8,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
     [Area("Admin")]
     public class CategoryController : Controller
     {
-        private readonly IUnitOFWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
         //public object?[]? Id { get; private set; }
 
-        public CategoryController(IUnitOFWork unitOfWork)
+        public CategoryController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -40,8 +40,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(Category obj)
         {
-        
-          
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Update(obj);

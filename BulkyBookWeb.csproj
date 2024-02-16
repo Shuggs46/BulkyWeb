@@ -7,10 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\**" />
+    <Content Remove="Controllers\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <None Remove="Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Remove="Areas\Admin\Controllers\ProductControllerToo.cs" />
     <Compile Remove="Areas\Customer\Controllers\CategoryController.cs" />
-    <Compile Remove="Controllers\CategoryController.cs" />
-    <Compile Remove="Controllers\HomeController.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,10 +34,6 @@
     <ProjectReference Include="..\Bulky.DataAccess\BulkyBook.DataAccess.csproj" />
     <ProjectReference Include="..\Bulky.Models\BulkyBook.Models.csproj" />
     <ProjectReference Include="..\Bulky.Utility\BulkyBook.Utility.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
