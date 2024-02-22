@@ -20,20 +20,45 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
+    <Content Remove="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Remove="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Remove="wwwroot\images\products\07775afb-1e39-418d-b995-01520a31d20e.jpg.jpg" />
+    <Content Remove="wwwroot\images\products\398cfe3a-0b1a-46ef-b5b6-1c987b14507a.jpg.jpg" />
+    <Content Remove="wwwroot\images\products\666043c9-f448-459b-9be4-80be8ef779f7.jpg.jpg" />
+    <Content Remove="wwwroot\images\products\67becc5d-ee9a-4f7d-aa05-eeafc75827c2.jpg" />
+    <Content Remove="wwwroot\images\products\68171bc5-fb42-4d16-815c-8471b1c410ea.jpg.jpg" />
+    <Content Remove="wwwroot\images\products\82ce066d-db66-4904-886f-c69b1eb5d408.jpg.jpg" />
+    <Content Remove="wwwroot\images\products\94418e4d-9c1a-4414-beb2-42af01a9d7f9..jpg" />
+    <Content Remove="wwwroot\images\products\c28ecb79-938a-4f8b-8dd9-d45e67e4b181.jpg" />
+    <Content Remove="wwwroot\images\products\cab8352b-bc39-4bc1-97fe-a7587fd93e9a.jpg.jpg" />
+    <Content Remove="wwwroot\images\products\d2eeab0d-9a9b-42ee-a377-28fba959b325.jpg.jpg" />
+    <Content Remove="wwwroot\images\products\eea233a5-1923-48d0-b5a8-25b94c077fb5.jpg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Shared\_Layout - Copy.cshtml.css" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Bulky.DataAccess\BulkyBook.DataAccess.csproj" />
     <ProjectReference Include="..\Bulky.Models\BulkyBook.Models.csproj" />
     <ProjectReference Include="..\Bulky.Utility\BulkyBook.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\products\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.1" />
   </ItemGroup>
 
 </Project>
