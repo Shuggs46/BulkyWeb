@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Product>
 
-
 <div class="row pb-3">
     @foreach(var product in Model)
     {
@@ -21,8 +20,8 @@
                                         @product.ListPrice.ToString("c")
                                     </span>
                                  </p>
-                           @*  </div>"
-                             <div class="p-1"> *@
+                            </div>"
+                            <div class="p-1"> 
                                 <p class="text-dark text-opacity-75 text-center mb-0">
                                     As low as:
                                     <span>
@@ -30,13 +29,13 @@
                                     </span>
                                 </p>
                             </div>"
-                        </div>
-                        <div>
-                            <a asp-action="Details" 
-                                asp-route-productId="@product.Id" 
-                                class="btn btn-primary gradient border-o form-control">
-                                Details
-                            </a>"                         
+                            <div class ="p-1">
+                                <a asp-action="Details" 
+                                    asp-route-productId="@product.Id" 
+                                    class="btn btn-primary gradient border-o form-control">
+                                    Details
+                                </a>"                         
+                            </div>
                         </div>
                     </div>                          
                 </div>

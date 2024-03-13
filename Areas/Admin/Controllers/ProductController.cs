@@ -13,7 +13,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _webhostEnvironment;
-        //public object?[]? Id { get; private set; }
+ 
 
         public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webhostEnvironment)
         {

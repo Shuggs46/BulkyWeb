@@ -1,12 +1,12 @@
 using BulkyBook.DataAccess.Repository;
 using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.DataAccess.Data;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BulkyBook.Utility;
 using BulkyBook.Models;
+
 
 
 namespace BulkyBookBook
@@ -15,20 +15,20 @@ namespace BulkyBookBook
     {
         public static void Main(string[] args)
         {
+
+            Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Production");
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            
             builder.Services.AddDbContext<ApplicationDBContext>(options => 
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-             builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders(); 
-
-            //builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>();
-            //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDBContext>();
-            //builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDBContext>();
-
-            builder.Services.AddRazorPages();  
+            // builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>();
+            builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDBContext>();
+           
+            builder.Services.AddRazorPages();
             builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();      
             builder.Services.AddScoped<IEmailSender, EmailSender>();
 

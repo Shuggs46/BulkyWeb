@@ -10,16 +10,17 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        //public object?[]? Id { get; private set; }
-
         public CategoryController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
-        {  
+        {
+            //List<Type> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             return View(objCategoryList);
+            //List<Category> objCategoryList = _unitOfWork.Category.GetAll(includeProperties: "Category").ToList();
+            //return View(objCategoryList);
         }
 
         public IActionResult Edit(int? id)
@@ -28,7 +29,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
+            BulkyBook.Models.Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
             //Category? categoryFromDB1 = _db.Categories.FirstOrDefault(u=>u.Id==id);
             //Category? categoryFromDB2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
             if (categoryFromDB == null)
@@ -38,7 +39,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(categoryFromDB);
         }
         [HttpPost]
-        public IActionResult Edit(Category obj)
+        public IActionResult Edit(BulkyBook.Models.Category obj)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +56,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Category obj)
+        public IActionResult Create(BulkyBook.Models.Category obj)
         {
 
             if (ModelState.IsValid)
@@ -74,7 +75,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
+            BulkyBook.Models.Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
             //Category? categoryFromDB1 = _db.Categories.FirstOrDefault(u=>u.Id==id);
             //Category? categoryFromDB2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
             if (categoryFromDB == null)
@@ -87,7 +88,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
+            BulkyBook.Models.Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
