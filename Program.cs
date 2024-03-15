@@ -16,22 +16,20 @@ namespace BulkyBookBook
         public static void Main(string[] args)
         {
 
-            Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Production");
+            //Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Production");
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
-            
+            builder.Services.AddControllersWithViews();            
             builder.Services.AddDbContext<ApplicationDBContext>(options => 
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-            // builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>();
-            builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDBContext>();
            
+           // builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDBContext>();
+                       
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>();
             builder.Services.AddRazorPages();
             builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();      
             builder.Services.AddScoped<IEmailSender, EmailSender>();
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -41,10 +39,10 @@ namespace BulkyBookBook
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+           
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseRouting();
+            app.UseRouting();           
             app.UseAuthentication();
             app.UseAuthorization();
             app.MapRazorPages();
