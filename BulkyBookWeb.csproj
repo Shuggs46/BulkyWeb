@@ -131,6 +131,7 @@
     <None Include="Areas\Identity\Pages\_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Identity\Pages\_ViewImports.cshtml" />
     <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
+    <None Include="BulkyBook.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>
