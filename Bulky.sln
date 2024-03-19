@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBookWeb", "BulkyBookWeb.csproj", "{14CED1D8-7E42-48DE-98AB-10B79EA50360}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBookWeb", "BulkyWeb\BulkyBookWeb.csproj", "{14CED1D8-7E42-48DE-98AB-10B79EA50360}"
 	ProjectSection(ProjectDependencies) = postProject
 		{AC2AC5F2-7CC6-4BD8-9617-FFE296161F3E} = {AC2AC5F2-7CC6-4BD8-9617-FFE296161F3E}
 		{D57EC3FE-2E7C-4649-9B55-B1E8233045C6} = {D57EC3FE-2E7C-4649-9B55-B1E8233045C6}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBook.DataAccess", "..\Bulky.DataAccess\BulkyBook.DataAccess.csproj", "{57959C72-B7C5-4CA2-B0A5-9358B0FD9F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBook.DataAccess", "Bulky.DataAccess\BulkyBook.DataAccess.csproj", "{57959C72-B7C5-4CA2-B0A5-9358B0FD9F65}"
 	ProjectSection(ProjectDependencies) = postProject
 		{AC2AC5F2-7CC6-4BD8-9617-FFE296161F3E} = {AC2AC5F2-7CC6-4BD8-9617-FFE296161F3E}
 		{D57EC3FE-2E7C-4649-9B55-B1E8233045C6} = {D57EC3FE-2E7C-4649-9B55-B1E8233045C6}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBook.Models", "..\Bulky.Models\BulkyBook.Models.csproj", "{AC2AC5F2-7CC6-4BD8-9617-FFE296161F3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBook.Models", "Bulky.Models\BulkyBook.Models.csproj", "{AC2AC5F2-7CC6-4BD8-9617-FFE296161F3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBook.Utility", "..\Bulky.Utility\BulkyBook.Utility.csproj", "{D57EC3FE-2E7C-4649-9B55-B1E8233045C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBook.Utility", "Bulky.Utility\BulkyBook.Utility.csproj", "{D57EC3FE-2E7C-4649-9B55-B1E8233045C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
