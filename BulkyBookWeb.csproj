@@ -132,6 +132,8 @@
     <None Include="Areas\Identity\Pages\_ViewImports.cshtml" />
     <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
     <None Include="BulkyBook.DataAccess.csproj" />
+    <None Include="BulkyBook.Models.csproj" />
+    <None Include="BulkyBook.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
