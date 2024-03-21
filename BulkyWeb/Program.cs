@@ -18,7 +18,7 @@ namespace BulkyBookBook
 
             //Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Production");
             var builder = WebApplication.CreateBuilder(args);
-
+       
             // Add services to the container.
             builder.Services.AddControllersWithViews();            
             builder.Services.AddDbContext<ApplicationDBContext>(options => 
