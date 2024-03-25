@@ -24,9 +24,14 @@ namespace BulkyBookBook
             builder.Services.AddDbContext<ApplicationDBContext>(options => 
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDBContext>();
+           
             builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders();
-
+            builder.Services.ConfigureApplicationCookie(Options =>
+            {
+                Options.LoginPath = $"/Identity/Account/Login";
+                Options.LogoutPath = $"/Identity/Account/Logout";
+                Options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+            });
             builder.Services.AddRazorPages();
             builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();      
             builder.Services.AddScoped<IEmailSender, EmailSender>();
