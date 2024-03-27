@@ -51,7 +51,8 @@ public class RegisterModel : PageModel
             _emailStore = GetEmailStore();
             _signInManager = signInManager;
             _logger = logger;
-            _emailSender = emailSender;         
+           _emailSender = emailSender;         
+            _unitOfWork = unitOfWork;
         }
 
 
@@ -114,12 +115,15 @@ public class RegisterModel : PageModel
         public IEnumerable <SelectListItem > RoleList { get; set; }
 
         [Required]
-        public string Name { get; set; }
-        public string? StreetAddress { get; set; }
-        public string? City { get; set; }
-        public string? State { get; set; }
-        public string? PostalCode { get; set; }
-        public string? PhoneNumber { get; set; }
+            public string Name { get; set; }
+            public string? StreetAddress { get; set; }
+            public string? City { get; set; }
+            public string? State { get; set; }
+            public string? PostalCode { get; set; }
+            public string? PhoneNumber { get; set; }
+            public int? CompanyId { get; set; }
+            [ValidateNever]
+            public IEnumerable<SelectListItem> CompanyList { get; set; }
 
         }
 
@@ -140,7 +144,12 @@ public class RegisterModel : PageModel
             {
                 Text = i,
                 Value = i
-            })
+            }),
+            CompanyList = _unitOfWork.Company.GetAll().Select(i => new SelectListItem
+              {
+                  Text = i.Name ,
+                  Value = i.Id.ToString()  
+              })
         };
     ReturnUrl = returnUrl;
     ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
