@@ -171,11 +171,14 @@ public class RegisterModel : PageModel
         
             user.Name = Input.Name;
             user.StreetAddress = Input.StreetAddress;
-            user.City = Input.City;
-           
+            user.City = Input.City;           
             user.State = Input.State;
             user.PostalCode = Input.PostalCode;
             user.PhoneNumber = Input.PhoneNumber;
+                if (Input.Role == SD.Role_Company)
+                {
+                    user.CompanyId= Input.CompanyId;    
+                }
             var result = await _userManager.CreateAsync(user, Input.Password);
 
             if (result.Succeeded)
