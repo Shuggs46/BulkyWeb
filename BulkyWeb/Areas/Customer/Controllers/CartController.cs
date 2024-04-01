@@ -7,7 +7,7 @@ using System.Security.Claims;
 using BulkyBook.Models;
 
 namespace BulkyBookWeb.Areas.Customer.Controllers
-{   
+{
     [Area("customer")]
     [Authorize]
     public class CartController : Controller
@@ -17,10 +17,11 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
         public CartController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-        }   
-        
-        public IActionResult Index() {
-               
+        }
+
+        public IActionResult Index()
+        {
+
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
@@ -29,14 +30,52 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
                 ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId
                                     , includeProperties: "Product")
             };
-           foreach(var cart in ShoppingCartVM.ShoppingCartList)
+            foreach (var cart in ShoppingCartVM.ShoppingCartList)
             {
                 cart.Price = GetPriceBasedOnQuantity(cart);
                 ShoppingCartVM.OrderTotal += (cart.Price * cart.Count);
             }
-            return View(ShoppingCartVM); 
+            return View(ShoppingCartVM);
         }
-        private double GetPriceBasedOnQuantity(ShoppingCart shoppingCart) {
+
+        public IActionResult Plus(int cartId)
+        {
+            var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
+            cartFromDb.Count += 1;
+            _unitOfWork.ShoppingCart.Update(cartFromDb);
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Minus(int cartId)
+        {
+            var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
+            if (cartFromDb.Count <= 1)
+            {
+                //remove from cart
+                _unitOfWork.ShoppingCart.Remove(cartFromDb);
+            }
+            else
+            {
+                cartFromDb.Count -= 1;
+                _unitOfWork.ShoppingCart.Update(cartFromDb);
+            }
+
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Remove(int cartId)
+        {
+            var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
+            _unitOfWork.ShoppingCart.Remove(cartFromDb);
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        private double GetPriceBasedOnQuantity(ShoppingCart shoppingCart)
+        {
             if (shoppingCart.Count <= 50)
             {
                 return shoppingCart.Product.Price;
@@ -51,8 +90,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
                 {
                     return shoppingCart.Product.Price100;
                 }
-            }   
+            }
         }
     }
-   
+
 }
