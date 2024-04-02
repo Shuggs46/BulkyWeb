@@ -13,7 +13,7 @@ namespace BulkyBook.DataAccess.Repository.IRepository
         public Repository(ApplicationDBContext db)
         {
             _db = db;
-            dbSet = _db.Set<T>();
+            this.dbSet = _db.Set<T>();
             _db.Products.Include(u => u.Category);
         }
 
@@ -63,11 +63,6 @@ namespace BulkyBook.DataAccess.Repository.IRepository
                 }
             }
             return query.ToList();
-        }
-
-        public IEnumerable<T> GetAll(string? includeProperties = null)
-        {
-            throw new NotImplementedException();
         }
 
         public void Remove(T entity)

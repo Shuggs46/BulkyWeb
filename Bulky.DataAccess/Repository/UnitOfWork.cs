@@ -1,6 +1,5 @@
-﻿using BulkyBook.DataAccess.Data;
-using BulkyBook.DataAccess.Repository.IRepository;
-
+﻿using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.DataAccess.Data;
 namespace BulkyBook.DataAccess.Repository
 {
     public class UnitOfWork : IUnitOfWork
@@ -16,13 +15,13 @@ namespace BulkyBook.DataAccess.Repository
         public UnitOfWork(ApplicationDBContext db)
         {
             _db = db;
+            ApplicationUser = new ApplicationUserRepository(_db);
+            ShoppingCart = new ShoppingCartRepository(_db);
             Category = new CategoryRepository(_db);
             Product = new ProductRepository(_db);
-            Company = new CompanyRepository(_db);
-            ShoppingCart = new ShoppingCartRepository(_db);
+            Company = new CompanyRepository(_db);           
             OrderHeader = new OrderHeaderRepository(_db);
             OrderDetail = new OrderDetailRepository(_db);   
-            ApplicationUser = new ApplicationUserRepository(_db);
         }
 
 
