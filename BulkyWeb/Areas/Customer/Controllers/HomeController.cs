@@ -49,8 +49,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             {
                 var claimsIdentity = (ClaimsIdentity)User.Identity;
                 var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+                
                 shoppingCart.ApplicationUserId = userId;
-
+                //shoppingCart.ApplicationUser.UserName = "Test";
                 ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId && u.ProductId == shoppingCart.ProductId);
                 if (cartFromDb != null)
                 {
