@@ -9,7 +9,7 @@ namespace BulkyBook.DataAccess.Repository
 
     public class OrderHeaderRepository : Repository<OrderHeader>, IOrderHeaderRepository
     {
-        private readonly ApplicationDBContext _db;
+        private ApplicationDBContext _db;
         public OrderHeaderRepository(ApplicationDBContext db) : base(db)
         {
             _db = db;
@@ -20,9 +20,9 @@ namespace BulkyBook.DataAccess.Repository
                 _db.OrderHeaders.Update(obj);        
         }
 
-        public void UpdateStatus(int Id, string orderStatus, string? paymentStatus = null)
+        public void UpdateStatus(int id, string orderStatus, string? paymentStatus = null)
         {
-            var orderFromDb = _db.OrderHeaders.FirstOrDefault(u => u.Id == Id);
+            var orderFromDb = _db.OrderHeaders.FirstOrDefault(u => u.Id == id);
             if (orderFromDb !=null)
             {
                 orderFromDb.OrderStatus = orderStatus;
@@ -33,9 +33,9 @@ namespace BulkyBook.DataAccess.Repository
             }
         }
 
-        public void UpdateStripePaymentId(int Id, string sessionId, string paymentIntentId = null)
+        public void UpdateStripePaymentId(int id, string sessionId, string paymentIntentId = null)
         {
-            var orderFromDb = _db.OrderHeaders.FirstOrDefault(u => u.Id == Id);
+            var orderFromDb = _db.OrderHeaders.FirstOrDefault(u => u.Id == id);
             if (!string.IsNullOrEmpty(sessionId))
             {
                 orderFromDb.SessionId = sessionId;

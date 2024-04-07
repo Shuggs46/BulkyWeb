@@ -30,40 +30,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(objproductList);
         }
 
-        //public IActionResult Edit(int? id)
-        //{
-        //    if (id == null || id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    Product? productFromDB = _unitOfWork.Product.Get(u => u.Id == id);
-        //    //Product? ProductFromDB1 = _db.Products.FirstOrDefault(u=>u.Id==id);
-        //    //Product? ProductFromDB2 = _db.Products.Where(u=>u.Id==id).FirstOrDefault();
-        //    IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category
-        //               .GetAll().Select(i => new SelectListItem
-        //               {
-        //                   Text = i.Name,
-        //                   Value = i.Id.ToString()
-        //               });
-        //    ViewData["CategoryList"] = CategoryList;
-        //    if (productFromDB == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(productFromDB);
-        //}
-        //[HttpPost]
-        //public IActionResult Edit(Product obj)
-        //{
-        //    //if (ModelState.IsValid)
-        //    //{
-        //        _unitOfWork.Product.Update(obj);
-        //        _unitOfWork.Save();
-        //        TempData["success"] = "Product updated sucessfully";
-        //        return RedirectToAction("Index");
-        //    //}
-        //    //return View();
-        //}
+       
         public IActionResult Upsert(int? id)
         {
             ProductVM productVM = new()
@@ -149,35 +116,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         }
  
 
-        //public IActionResult Delete(int? id)
-        //{
-        //    if (id == null || id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    Product? productFromDB = _unitOfWork.Product.Get(u => u.Id == id);
-        //    //Product? ProductFromDB1 = _db.Categories.FirstOrDefault(u=>u.Id==id);
-        //    //Product? ProductFromDB2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
-        //    if (productFromDB == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(productFromDB);
-        //}
-        //[HttpPost, ActionName("Delete")]
-
-        //public IActionResult DeletePOST(int? id)
-        //{
-        //    Product? obj = _unitOfWork.Product.Get(u => u.Id == id);
-        //    if (obj == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    _unitOfWork.Product.Remove(obj);
-        //    _unitOfWork.Save();
-        //    TempData["success"] = "Product deleted sucessfully";
-        //    return RedirectToAction("Index");
-        //}
+       
 
         #region  API CALLS
         [HttpGet]
