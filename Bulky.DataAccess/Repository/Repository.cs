@@ -1,15 +1,17 @@
 ﻿using BulkyBook.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using BulkyBook.DataAccess.Repository.IRepository;
+using DbSet;
+
 
 namespace BulkyBook.DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDBContext _db;
-        internal DbSet<T> dbSet;
+        public DbSet<T> dbSet;
+
         public Repository(ApplicationDBContext db)
         {
             _db = db;

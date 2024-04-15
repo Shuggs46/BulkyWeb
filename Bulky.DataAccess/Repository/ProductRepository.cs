@@ -2,7 +2,10 @@
 using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models;
 
+
+
 namespace BulkyBook.DataAccess.Repository
+
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {

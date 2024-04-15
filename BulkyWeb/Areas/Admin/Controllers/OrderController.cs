@@ -22,8 +22,9 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         {
             return View();  
         }
-       
-        
+
+
+
         #region  API CALLS
         [HttpGet]
         public IActionResult GetAll(string status)
