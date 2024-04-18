@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using BulkyBook.DataAccess.Repository.IRepository;
-using DbSet;
 
 
 namespace BulkyBook.DataAccess.Repository
@@ -10,7 +9,7 @@ namespace BulkyBook.DataAccess.Repository
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDBContext _db;
-        public DbSet<T> dbSet;
+        internal DbSet<T> dbSet;
 
         public Repository(ApplicationDBContext db)
         {
