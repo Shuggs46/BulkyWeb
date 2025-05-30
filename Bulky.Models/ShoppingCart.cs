@@ -8,7 +8,7 @@ using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BulkyBook.Models
+namespace Bulky.Models
 {
     public class ShoppingCart
     {

@@ -1,11 +1,11 @@
-﻿using BulkyBook.DataAccess.Migrations;
-using BulkyBook.Models;
+﻿using Bulky.Models;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace BulkyBook.DataAccess.Data
+namespace Bulky.DataAccess.Data
 {
     public class ApplicationDBContext : IdentityDbContext<IdentityUser>
     {
@@ -22,6 +22,8 @@ namespace BulkyBook.DataAccess.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<OrderHeader> OrderHeaders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

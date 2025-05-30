@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BulkyBook.Models.ViewModels
+namespace Bulky.Models.ViewModels
 {
     public class OrderVM
     {

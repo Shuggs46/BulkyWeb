@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace BulkyBook.Models
+namespace Bulky.Models
 {
     public class ApplicationUser:IdentityUser{
 

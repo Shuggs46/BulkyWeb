@@ -1,9 +1,9 @@
-﻿using BulkyBook.DataAccess.Data;
-using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.Models;
+﻿using Bulky.DataAccess.Data;
+using Bulky.DataAccess.Repository.IRepository;
+using Bulky.Models;
 
 
-namespace BulkyBook.DataAccess.Repository
+namespace Bulky.DataAccess.Repository
 {
 
     public class ShoppingCartRepository : Repository<ShoppingCart>, IShoppingCartRepository

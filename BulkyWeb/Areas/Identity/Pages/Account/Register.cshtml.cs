@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using BulkyBook.Models;
+using Bulky.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +17,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using BulkyBook.Utility;
-using BulkyBook.DataAccess.Repository.IRepository;
+using Bulky.Utility;
+using Bulky.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections;
 
-namespace BulkyBookWeb.Areas.Identity.Pages.Account
+namespace BulkyWeb.Areas.Identity.Pages.Account
 { 
 public class RegisterModel : PageModel
     {

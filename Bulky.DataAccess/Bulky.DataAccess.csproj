@@ -15,11 +15,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DbSet\**" />
+    <EmbeddedResource Remove="DbSet\**" />
+    <None Remove="DbSet\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Data\ApplicationDBContextFactory.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DbSet\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

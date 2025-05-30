@@ -1,10 +1,10 @@
-﻿using BulkyBook.DataAccess.Data;
+﻿using Bulky.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using BulkyBook.DataAccess.Repository.IRepository;
+using Bulky.DataAccess.Repository.IRepository;
 
 
-namespace BulkyBook.DataAccess.Repository
+namespace Bulky.DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {

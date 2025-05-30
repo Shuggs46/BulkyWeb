@@ -1,10 +1,10 @@
-using BulkyBook.DataAccess.Repository;
-using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.DataAccess.Data;
+using Bulky.DataAccess.Repository;
+using Bulky.DataAccess.Repository.IRepository;
+using Bulky.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using BulkyBook.Utility;
+using Bulky.Utility;
 using Stripe;
 
 
@@ -12,7 +12,7 @@ using Stripe;
 
 
 
-namespace BulkyBookBook
+namespace BulkyBook
 {
     public class Program
     {

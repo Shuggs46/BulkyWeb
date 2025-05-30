@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 
 
-namespace BulkyBook.DataAccess.Repository.IRepository
+namespace Bulky.DataAccess.Repository.IRepository
 {
     public interface IRepository<T> where T : class
     {

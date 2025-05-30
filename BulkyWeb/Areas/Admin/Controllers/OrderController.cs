@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using BulkyBook.DataAccess;
-using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.Models;
+using Bulky.DataAccess;
+using Bulky.DataAccess.Repository.IRepository;
+using Bulky.Models;
 using System.Collections;
 
-namespace BulkyBookWeb.Areas.Admin.Controllers
+namespace BulkyWeb.Areas.Admin.Controllers
 {
     [Area("admin")]
     public class OrderController: Controller

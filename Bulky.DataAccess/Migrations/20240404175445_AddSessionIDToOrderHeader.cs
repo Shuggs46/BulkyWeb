@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BulkyBook.DataAccess.Migrations
+namespace Bulky.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddSessionIDToOrderHeader : Migration

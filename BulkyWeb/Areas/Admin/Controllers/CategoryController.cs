@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using BulkyBook.Models;
-using BulkyBook.DataAccess.Repository.IRepository;
+using Bulky.Models;
+using Bulky.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
-using BulkyBook.Utility;
+using Bulky.Utility;
 using Microsoft.AspNetCore.Authorization;
 
 
-namespace BulkyBookWeb.Areas.Admin.Controllers
+namespace BulkyWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
     //[Authorize(Roles = SD.Role_Admin)]  
@@ -33,7 +33,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            BulkyBook.Models.Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
+            Bulky.Models.Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
             //Category? categoryFromDB1 = _db.Categories.FirstOrDefault(u=>u.Id==id);
             //Category? categoryFromDB2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
             if (categoryFromDB == null)
@@ -43,7 +43,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(categoryFromDB);
         }
         [HttpPost]
-        public IActionResult Edit(BulkyBook.Models.Category obj)
+        public IActionResult Edit(Bulky.Models.Category obj)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(BulkyBook.Models.Category obj)
+        public IActionResult Create(Bulky.Models.Category obj)
         {
 
             if (ModelState.IsValid)
@@ -79,7 +79,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            BulkyBook.Models.Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
+            Bulky.Models.Category? categoryFromDB = _unitOfWork.Category.Get(u => u.Id == id);
             //Category? categoryFromDB1 = _db.Categories.FirstOrDefault(u=>u.Id==id);
             //Category? categoryFromDB2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
             if (categoryFromDB == null)
@@ -92,7 +92,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
         public IActionResult DeletePOST(int? id)
         {
-            BulkyBook.Models.Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
+            Bulky.Models.Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using BulkyBook.Models;
-using BulkyBook.DataAccess.Repository.IRepository;
+using Bulky.Models;
+using Bulky.DataAccess.Repository.IRepository;
 
 
-namespace BulkyBookWeb.Areas.Customer.Controllers
+namespace BulkyWeb.Areas.Customer.Controllers
 {
     [Area("Customer")]
     public class CategoryController : Controller

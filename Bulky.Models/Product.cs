@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace BulkyBook.Models
+namespace Bulky.Models
 {
     public class Product
     {

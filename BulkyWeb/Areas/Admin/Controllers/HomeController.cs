@@ -1,10 +1,10 @@
-using BulkyBook.DataAccess.Data;
-using BulkyBook.Models;
+using Bulky.DataAccess.Data;
+using Bulky.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 
-namespace BulkyBookWeb.Areas.Admin.Controllers
+namespace BulkyWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class HomeController : Controller

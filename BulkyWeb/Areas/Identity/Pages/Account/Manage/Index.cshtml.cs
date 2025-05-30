@@ -6,12 +6,12 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using BulkyBook.Models;
+using Bulky.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BulkyBookWeb.Areas.Identity.Pages.Account.Manage
+namespace BulkyWeb.Areas.Identity.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {
